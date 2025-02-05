@@ -1,0 +1,199 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #E8E8E8; /* Light Gray Text */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header & Footer Styling */
+header {
+    background: linear-gradient(45deg, #009688, #1E90FF); /* Teal to Light Blue */
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    animation: slideIn 0.8s ease-in-out;
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(45deg, #1E90FF, #009688); /* Light Blue to Teal */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+    opacity: 0.9;
+    animation: fadeInUp 0.8s ease-in-out;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Navigation Bar */
+nav {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333333; /* Dark Gray */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeIn 1s ease-in-out;
+}
+
+nav a {
+    color: #FFA07A; /* Light Coral */
+    margin: 10px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+nav a:hover {
+    color: #FFD700; /* Gold */
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+/* Main Content */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background: #212121; /* Dark Gray */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    animation: fadeInUp 1.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Sequential Fade-in for Content Elements */
+h2, h3, p, ul, button, .gallery img {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+h2 { animation-delay: 0.5s; color: #40E0D0; } /* Turquoise */
+h3 { animation-delay: 0.7s; color: #1E90FF; } /* Dodger Blue */
+p { animation-delay: 0.9s; }
+ul { animation-delay: 1.1s; }
+button { animation-delay: 1.3s; }
+.gallery img:nth-child(1) { animation-delay: 1.5s; }
+.gallery img:nth-child(2) { animation-delay: 1.7s; }
+.gallery img:nth-child(3) { animation-delay: 1.9s; }
+
+/* Images */
+.full-width {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 10px;
+    border-radius: 10px;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.gallery img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.8); /* Neon Green Glow */
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(45deg, #FF4500, #FF6347); /* Orange to Tomato */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    margin-top: 20px;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    nav {
+        flex-direction: column;
+    }
+    
+    nav a {
+        font-size: 1.1rem;
+        padding: 5px;
+    }
+    
+    .gallery img {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    header, footer {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+    
+    nav a {
+        font-size: 1rem;
+    }
+    
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .gallery img {
+        width: 95%;
+    }
+}
